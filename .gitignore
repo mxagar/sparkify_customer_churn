@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# OS
+.DS_Store
+
+# IDEs
+.vscode
+
+# Additional
+python_manual.txt
+git_howto.txt
