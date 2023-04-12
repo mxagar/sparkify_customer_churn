@@ -137,3 +137,4 @@ dmypy.json
 # Additional
 python_manual.txt
 git_howto.txt
+starter/mini_sparkify_event_data.json
