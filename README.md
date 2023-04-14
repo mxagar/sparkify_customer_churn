@@ -4,6 +4,13 @@ This project analyzes and predicts customer churn of a music streaming service u
 
 I took the starter code for this repository from a Udacity assignment project and modified it to the present form, which deviates significantly from the original form; see [`starter`](starter).
 
+The project focuses on an imaginary music streaming service, similar to Spotify, where users can listen to streamed music. In that service:
+
+- We have: (1) free-tier users and (2) premium users who pay a subscription.
+- Every time an user is involved in an event, it is logged with a timestamp; example events: `songplay`, `logout`, `like`, `ad_heard`, `downgrade`, etc.
+
+The goal is to predict customer churn, either (1) as a downgrade from the premium to free plan or (2) in form of a user leaving the service. With churn predictions, the company can target those users with incentives, such as discounts, etc.
+
 :construction: On-going work.
 
 Contents:
@@ -87,6 +94,12 @@ List of most important dependencies:
 ## References and Links
 
 :construction: TBD.
+
+- [spark_big_data_guide](https://github.com/mxagar/spark_big_data_guide)
+- [data_science_udacity](https://github.com/mxagar/data_science_udacity)
+- [sql_guide](https://github.com/mxagar/sql_guide)
+- [eda_fe_summary](https://github.com/mxagar/eda_fe_summary)
+
 
 ## Authorship
 
