@@ -52,28 +52,44 @@ The directory of the project consists of the following files:
 
 ### Installing Dependencies for Custom Environments
 
-If you'd like to control where the notebook runs, you need to create a custom environment and install the required dependencies. A quick recipe which sets everything up with [conda](https://docs.conda.io/en/latest/) is the following:
+If you already have a Python environment with the usual ML libraries and you'd like to add PySpark:
 
 ```bash
-# Create environment with YAML, incl. packages
-conda env create -f conda.yaml
+# Install PySpark manually
+python -m pip install pyspark
+python -m pip install findspark
+```
+
+Alternatively, if you want to create a new Python environment (**recommended**), you can do it with [conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html):
+
+```bash
+# Create an environment
+conda create -n sparkify python=3.9 pip
 conda activate sparkify
 
-# Or
-conda create --name rec-ibm pip python=3.9
-conda activate sparkify
-# and install version-specific pip dependencies
-pip install -r requirements.txt
+# Install pip-tools
+python -m pip install -U pip-tools
+
+# Generate pinned requirements.txt
+# PySpark is listed there
+pip-compile requirements.in
+
+# Install pinned requirements, as always
+python -m pip install -r requirements.txt
+
+# If required, add new dependencies to requirements.in and sync
+# i.e., update environment
+pip-compile requirements.in
+pip-sync requirements.txt
+python -m pip install -r requirements.txt
 
 # To track any changes and versions you have
 conda env export > conda.yaml
 pip list --format=freeze > requirements.txt
+
+# To delete the conda environment, if required
+conda remove --name sparkify --all
 ```
-
-List of most important dependencies:
-
-- A
-- B
 
 ## Notes on the Theory
 
